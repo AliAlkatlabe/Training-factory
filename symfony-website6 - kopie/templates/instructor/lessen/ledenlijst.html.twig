@@ -1,0 +1,43 @@
+{% extends 'instructorbase.html.twig' %}
+
+{% block title %}Ledenlijst
+{% endblock %}
+
+{% block content %}
+	<h1>Leden</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Trainingnaam</th>
+				<th>Instructor</th>
+				<th>location</th>
+				<th>date</th>
+				<th>time</th>
+				<th>Membernaam</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			{% for member in members %}
+			
+				{% for les in member.registrations %}
+
+					<tr>
+						<td>{{les.lesson.training.name}}</td>
+						<td>{{les.lesson.instructor.username}}</td>
+						<td>{{les.lesson.location}}</td>
+						<td>{{les.lesson.date|date('Y-m-d')}}</td>
+						<td>{{les.lesson.time|date('H-i-s')}}</td>
+						
+						<td>{{les.member.username}}</td>
+					</tr>
+				{% endfor %}
+
+			{% endfor %}
+
+		</tbody>
+	</table>
+
+
+{% endblock %}

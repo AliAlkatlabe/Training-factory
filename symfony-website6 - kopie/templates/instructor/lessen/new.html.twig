@@ -1,0 +1,11 @@
+{% extends 'instructorbase.html.twig' %}
+
+{% block title %}New Lessen{% endblock %}
+
+{% block body %}
+    <h1>Create new Lessen</h1>
+
+    {{ include('instructor/lessen/_form.html.twig') }}
+<br>
+    <a href="{{ path('app_lessen_index') }}" class="btn btn-info">back to list</a>
+{% endblock %}

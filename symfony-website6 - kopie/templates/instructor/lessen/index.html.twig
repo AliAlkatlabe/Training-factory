@@ -1,0 +1,40 @@
+{% extends 'instructorbase.html.twig' %}
+
+{% block title %}Lessen{% endblock %}
+
+{% block content %}
+    <h1>Lessen</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Trainingnaam</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Max_persons</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lessen in lessens %}
+            <tr>
+                <td>{{ lessen.training.name}}</td>
+                <td>{{ lessen.date ? lessen.date|date('Y-m-d') : '' }}</td>
+                <td>{{ lessen.time ? lessen.time|date('H:i:s') : '' }}</td>
+                <td>{{ lessen.location }}</td>
+                <td>{{ lessen.maxPersons }}</td>
+                <td>
+                    {# <a href="{{ path('app_lessen_show', {'id': lessen.id}) }}">show</a> #}
+                    <a href="{{ path('app_lessen_edit', {'id': lessen.id}) }}" class="btn btn-primary">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_lessen_new') }}" class="btn btn-success">Create new</a>
+{% endblock %}

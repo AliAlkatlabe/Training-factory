@@ -1,0 +1,43 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Training index{% endblock %}
+
+{% block content %}
+    <h1>Training index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                {# <th>Id</th> #}
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Duration</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for training in trainings %}
+            <tr>
+                {# <td>{{ training.id }}</td> #}
+                <td>{{ training.name }}</td>
+                <td>{{ training.description }}</td>
+                <td>
+                <img src="{{ asset('uploads/images/' ~ training.image) }}" width="100" height="100">
+                </td>
+                <td>{{ training.duration }}</td>
+                <td>
+                    {# <a href="{{ path('app_training_show', {'id': training.id}) }}">show</a> #}
+                    <a href="{{ path('app_training_edit', {'id': training.id}) }}" class="btn btn-warning">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_training_new') }}" class="btn btn-success">Create new</a>
+{% endblock %}

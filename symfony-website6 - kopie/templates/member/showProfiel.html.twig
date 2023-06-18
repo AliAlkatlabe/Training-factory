@@ -1,0 +1,89 @@
+{% extends 'memberbase.html.twig'%}
+
+{% block title %}
+	{{ app.user.username  }}
+	Profile
+{% endblock %}
+
+{% block content %}
+
+
+	<section id="maincontent">
+		<div class="container">
+			<div
+				class="row">
+				<div
+					class="span8">
+					<!-- start article 1 -->
+					<article class="blog-post">
+						<div class="post-heading">
+							<h3>
+								<a href="#">Your Profile</a>
+							</h3>
+						</div>
+						<div class="row">
+							<div class="span8">
+
+								<table class="table">
+									<tbody>
+										<tr>
+											<th>Username</th>
+											<td>{{ app.user.username }}</td>
+										</tr>
+										<tr>
+											<th>Email</th>
+											<td>{{ app.user.email }}</td>
+										</tr>
+										<tr>
+											<th>Password</th>
+											<td>{{ app.user.password }}</td>
+										</tr>
+										<tr>
+											<th>firstname</th>
+											<td>{{ app.user.firstname }}</td>
+										</tr>
+										<tr>
+											<th>lastname</th>
+											<td>{{ app.user.lastname }}</td>
+										</tr>
+										<tr>
+											<th>birthday</th>
+											<td>{{ app.user.birthday|date("d-m-y") }}</td>
+										</tr>
+										<tr>
+											<th>gender</th>
+											<td>{{ app.user.gender }}</td>
+										</tr>
+										<tr>
+											<th>address</th>
+											<td>{{ app.user.address }}</td>
+										</tr>
+										<tr>
+											<th>postcode</th>
+											<td>{{ app.user.postcode }}</td>
+										</tr>
+										<tr>
+											<th>residence</th>
+											<td>{{ app.user.residence }}</td>
+										</tr>
+									
+									</tbody>
+								</table>
+
+
+								<a href="{{ path('app_member_edit', {'id': app.user.id}) }}">Edit Profile</a>
+
+
+							</div>
+						</div>
+					</article>
+					<!-- end article 1 -->
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+{% endblock %}
+

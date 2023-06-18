@@ -1,0 +1,38 @@
+{% extends 'memberbase.html.twig'%}
+
+{% block title %}Hello Member!
+{% endblock %}
+
+{% block content %}
+	<section>
+	<br>
+		<div class="row">
+			<p>
+				<b>Er zijn momenteel ({{ lessens|length }}) trainingen die we aanbieden</b>
+			</p>
+			<hr>
+			{% for les  in lessens  %}
+				<div class="col-sm-4">
+					<div class="card">
+						<img src="{{ asset('uploads/images/' ~ les.training.image)}}" class="card-img-top" alt="...">
+						
+						<div class="card-body">
+							<h5 class="card-title">{{les.training.name}}</h5>
+							<p class="card-text">{{les.date|date("d-m-y")}}
+								{{les.time|date('H:i')}}</p>
+							{# <a href="{{ path('inschrijven', {id:les.id}) }}" class="btn btn-primary">Inschrijven</a> #}
+							<a href="{{ path('inschrijven',{id:les.id} )}}" class="btn btn-primary">Inschrijven</a>
+
+						</div>
+					</div>
+
+				</div>
+
+
+			{% endfor %}
+
+
+		</div>
+		<section>
+
+		{% endblock %}

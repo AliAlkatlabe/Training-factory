@@ -1,0 +1,33 @@
+{% extends 'bezoekerbase.html.twig' %}
+
+{% block title %}Hello Bezoeker
+{% endblock %}
+
+{% block content %}
+<br>
+<div class="row">
+	<p>
+		<b>Er zijn momenteel ({{ trainings|length }}) Dit zijn de trainingen die wij aanbieden</b>
+	</p>
+	<hr>
+	{% for training in trainings %}
+		<div class="col-sm-4">
+			<div class="card">
+				{# <img src="{{ asset('symfony-website6/public/uploads/images/' ~ training.image) }}" height="100" width="100" alt="training"> #}
+					<img class="img-thumbnail" src="{{ asset('uploads/images/' ~ training.image) }}" alt="user avatar">
+
+				  {# <img src="{{ asset('img/aanbod/' ~ training.name  ~ '.jpg') }}" height="200px" alt="training"> #}
+				<div class="card-body">
+					<h5 class="card-title">{{training.name}}</h5>
+					<p class="card-text">{{training.description}}</p>
+				</div>
+			</div>
+
+		</div>
+
+
+	{% endfor %}
+
+
+</div>
+ {% endblock %}

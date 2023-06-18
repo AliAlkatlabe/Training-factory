@@ -1,0 +1,11 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}New Training{% endblock %}
+
+{% block body %}
+    <h1>Create new Training</h1>
+
+    {{ include('admin/training/_form.html.twig') }}
+<br>
+    <a href="{{ path('app_training_index') }}" class="btn btn-info">back to list</a>
+{% endblock %}

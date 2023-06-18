@@ -1,0 +1,87 @@
+{% extends 'instructorbase.html.twig' %}
+
+{% block title %}
+	{{ app.user.username  }}
+	Profile
+{% endblock %}
+
+{% block content %}
+
+ 
+	<section id="maincontent">
+		<div class="container">
+			<div
+				class="row">
+				<div
+					class="span8">
+					<!-- start article 1 -->
+					<article class="blog-post">
+						<div class="row">
+							<div class="span8">
+
+								<table class="table">
+                               {{ form_start(form) }}
+									<tbody>
+										<tr>
+											<th>Username</th>
+											<td>{{ form_row(form.username) }}</td>
+										</tr>
+										<tr>
+											<th>Email</th>
+											<td>{{ form_row(form.email) }}</td>
+										</tr>
+										<tr>
+											<th>Password</th>
+											<td>{{ form_row(form.plainPassword, {
+            label: 'Password'
+        }) }}</td>
+										</tr>
+										<tr>
+											<th>firstname</th>
+											<td>{{ form_row(form.firstname) }}</td>
+										</tr>
+										<tr>
+											<th>lastname</th>
+											<td>{{ form_row(form.lastname)}}</td>
+										</tr>
+										<tr>
+											<th>birthday</th>
+											<td>{{ form_row(form.birthday) }}</td>
+										</tr>
+										<tr>
+											<th>gender</th>
+											<td>{{ form_row(form.gender) }}</td>
+										</tr>
+										<tr>
+											<th>address</th>
+											<td>{{ form_row(form.address) }}</td>
+										</tr>
+										<tr>
+											<th>postcode</th>
+											<td>{{ form_row(form.postcode)}}</td>
+										</tr>
+										<tr>
+											<th>residence</th>
+											<td>{{ form_row(form.residence) }}</td>
+										</tr>
+									
+									</tbody>
+                                    
+								</table>
+
+
+				
+							</div>
+						</div>
+					</article>
+					<!-- end article 1 -->
+
+				</div>
+			</div>
+		</div>
+	</section>
+   
+
+ {{ form_end(form) }}
+{% endblock %}
+

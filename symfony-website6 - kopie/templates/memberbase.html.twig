@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<div class="container">
+		<div calss="row">
+			<div class="header-row lead">
+				<image src="{{ asset('images/logo.png') }}" alt="Logo" class="logo" width="400px">
+			</div>
+
+			<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+				<div class="container-fluid">
+					<a class="navbar-brand text-white" href="{{ path('app_member')}}">Home</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link text-white" aria-current="page" href="{{ path('lessen')}}">lessen</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link text-white" href="{{ path('inschrijvingen') }}">inschrijvingen</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link text-white" href="{{ path('app_member_edit', {'id': app.user.id}) }}">profiel</a>
+							</li>
+						</ul>
+						<ul class="navbar-nav ms-auto">
+						 {% if is_granted('ROLE_MEMBER')%}
+							<li class="nav-item">
+								<a class="nav-link text-white" href="{{ path('app_logout') }}">You are logged in as
+										member {{app.user.username}}, Uitloggen</a>
+							</li>
+							        {% endif %}
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 d-none d-sm-block">
+				<div class="card">
+					<img src="{{ asset('images/card1.jpg')}}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">The Gym</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 d-none d-sm-block">
+				<div class="card">
+					<img src="{{ asset('images/card2.jpg')}}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Sport school</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 d-none d-sm-block">
+				<div class="card">
+					<img src="{{ asset('images/card3.jpg')}}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">kickboxing</h5>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+		{% block content %}{% endblock %}
+		<footer class="mt-5 p-3 text-center">
+			<div class="footer container-fluid bg-dark text-light">
+				<i class="bi bi-instagram float-end img-thumbnail text-dark"></i>
+				<i class="bi bi-facebook float-end img-thumbnail text-dark"></i>
+				<i class="bi bi-youtube float-end img-thumbnail text-dark"></i>
+				<p class="text-center py-2 mb-0">Copyright © 2023 Designed by
+					<a href="#" rel="noopener noreferre">@Alkatlabe</a>
+				</p>
+			</div>
+		</footer>
+	</div>
+{% endblock %}

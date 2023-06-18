@@ -1,0 +1,36 @@
+{% extends 'memberbase.html.twig'%}
+
+{% block title %}Hello Member!
+{% endblock %}
+
+{% block content %}
+	<section>
+	<br>
+		<div class="row">
+			<p>
+				<b>Je hebt je aangemeld voor ({{ user|length }}) lessen</b>
+			</p>
+			<hr>
+			{% for reg  in user  %}
+				<div class="col-sm-4">
+					<div class="card">
+						<img src="{{ asset('uploads/images/' ~ reg.lesson.training.image)}}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">{{reg.lesson.training.name}}</h5>
+							<p class="card-text">{{reg.lesson.date|date("d-m-y")}}
+								{{reg.lesson.time|date('H:i')}}</p>
+							<a href="{{ path('uitschrijven', {id:reg.id}) }}" class="btn btn-primary">uitschrijven</a>
+
+						</div>
+					</div>
+
+				</div>
+
+
+			{% endfor %}
+
+
+		</div>
+		<section>
+
+		{% endblock %}

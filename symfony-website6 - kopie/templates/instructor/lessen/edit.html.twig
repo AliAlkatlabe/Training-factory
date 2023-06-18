@@ -1,0 +1,13 @@
+{% extends 'instructorbase.html.twig' %}
+
+{% block title %}Edit Lessen{% endblock %}
+
+{% block body %}
+    <h1>Edit Lessen</h1>
+
+    {{ include('instructor/lessen/_form.html.twig', {'button_label': 'Update'}) }}
+<br>
+    <a href="{{ path('app_lessen_index') }}" class="btn btn-info">back to list</a>
+
+    {{ include('instructor/lessen/_delete_form.html.twig') }}
+{% endblock %}
