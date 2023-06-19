@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2023 at 10:04 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Gegenereerd op: 19 jun 2023 om 02:07
+-- Serverversie: 10.4.24-MariaDB
+-- PHP-versie: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `doctrine_migration_versions`
+-- Tabelstructuur voor tabel `doctrine_migration_versions`
 --
 
 CREATE TABLE `doctrine_migration_versions` (
@@ -34,7 +34,7 @@ CREATE TABLE `doctrine_migration_versions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `doctrine_migration_versions`
+-- Gegevens worden geëxporteerd voor tabel `doctrine_migration_versions`
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lessen`
+-- Tabelstructuur voor tabel `lessen`
 --
 
 CREATE TABLE `lessen` (
@@ -66,23 +66,23 @@ CREATE TABLE `lessen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `lessen`
+-- Gegevens worden geëxporteerd voor tabel `lessen`
 --
 
 INSERT INTO `lessen` (`id`, `training_id`, `instructor_id`, `date`, `time`, `location`, `max_persons`) VALUES
-(1, 1, 3, '2023-02-10', '14:00:00', 'Zuiderpark', 12),
-(2, 2, 5, '2023-02-12', '15:00:00', 'Centrum', 8),
-(3, 1, 3, '2023-01-14', '11:00:00', 'Zuiderpark', 12),
-(6, 4, 11, '2023-02-28', '09:13:39', 'malta', 20),
-(7, 6, 11, '2023-02-19', '15:20:39', 'roma', 22),
-(8, 3, 5, '2023-02-22', '14:26:29', 'USA', 12),
-(9, 7, 5, '2023-02-20', '10:00:00', 'Centrum', 50),
-(10, 3, 14, '2023-01-05', '00:00:00', 'Den Haag', 23);
+(1, 1, 3, '2023-06-10', '14:00:00', 'Zuiderpark', 12),
+(2, 2, 5, '2023-06-12', '15:00:00', 'Centrum', 8),
+(3, 1, 3, '2023-05-14', '11:00:00', 'Zuiderpark', 12),
+(6, 4, 11, '2023-05-28', '09:13:39', 'malta', 20),
+(7, 6, 11, '2023-05-19', '15:20:39', 'roma', 22),
+(8, 3, 5, '2023-05-22', '14:26:29', 'USA', 12),
+(9, 7, 5, '2023-05-20', '10:00:00', 'Centrum', 50),
+(10, 3, 14, '2023-06-05', '00:00:00', 'Den Haag', 23);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messenger_messages`
+-- Tabelstructuur voor tabel `messenger_messages`
 --
 
 CREATE TABLE `messenger_messages` (
@@ -98,7 +98,7 @@ CREATE TABLE `messenger_messages` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `registration`
+-- Tabelstructuur voor tabel `registration`
 --
 
 CREATE TABLE `registration` (
@@ -109,11 +109,10 @@ CREATE TABLE `registration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `registration`
+-- Gegevens worden geëxporteerd voor tabel `registration`
 --
 
 INSERT INTO `registration` (`id`, `payment`, `member_id`, `lesson_id`) VALUES
-(13, 0, 3, 1),
 (16, 0, 3, 2),
 (17, 0, 4, 2),
 (18, 0, 4, 3),
@@ -121,12 +120,13 @@ INSERT INTO `registration` (`id`, `payment`, `member_id`, `lesson_id`) VALUES
 (20, 0, 12, 6),
 (21, 0, 12, 2),
 (23, 0, 14, 6),
-(24, 0, 13, 6);
+(24, 0, 13, 6),
+(25, 0, 15, 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `training`
+-- Tabelstructuur voor tabel `training`
 --
 
 CREATE TABLE `training` (
@@ -138,7 +138,7 @@ CREATE TABLE `training` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `training`
+-- Gegevens worden geëxporteerd voor tabel `training`
 --
 
 INSERT INTO `training` (`id`, `name`, `description`, `image`, `duration`) VALUES
@@ -154,7 +154,7 @@ INSERT INTO `training` (`id`, `name`, `description`, `image`, `duration`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Tabelstructuur voor tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -173,30 +173,32 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user`
+-- Gegevens worden geëxporteerd voor tabel `user`
 --
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `firstname`, `lastname`, `birthday`, `gender`, `address`, `postcode`, `residence`, `username`) VALUES
-(3, 'max@gmail.com', '[\"ROLE_ADMIN\"]', '$2y$13$7roSRGCWfs8EBiS0SByXuOHfvxPhTN60/Lwz9XVZ4NNW0oL/MxgZC', 'Mark', 'Marko', '2012-05-06', 'Male', 'Amsterdamstraat', '1004AN', 'Amsterdam', 'Mark'),
+(3, 'alk@gmail.com', '[\"ROLE_MEMBER\"]', '$2y$13$CkEp1uOnzSaFpEnNhBS0iOFt/b/pN4VHc7PafyhmWzesUL2WZeNbG', 'ali', 'ali', '2012-05-06', 'male', 'Den Haag', '2221', '', 'ali'),
 (4, 'Kon@gmail.com', '[\"ROLE_MEMBER\"]', '$2y$13$EFoqSP9nRwSfLVkyp2Xr4Oy14h1tMar2qZSb236Eb5bCAzkVkPNka', 'Kon', 'Kon', '1992-02-03', 'Female', 'Amsterdamstraat', '1004AN', 'Amsterdam', 'Kon'),
-(5, 'sam@gmail.com', '[\"ROLE_INSTRUCTOR\"]', '$2y$13$dvTGyMTHUrGGux15ENwpX.Cu3gSk61DxcYFSQkffudHf3fiEI8Lue', 'Sam', 'Sam', '1996-10-25', 'Male', 'Amsterdamstraat', '1004AN', 'Amsterdam', 'Sam'),
-(11, 'rok@gmail.com', '[\"ROLE_INSTRUCTOR\"]', '$2y$13$4y9RevozDOCM79KurkFHWO1YrbFnRcY33ZvjgU1zs..JPWBU6b2Ku', 'rok', 'rok', '1903-01-01', 'Male', 'roma', '1234', 'milan', 'rok'),
-(12, 'drago@gmail.com', '[\"ROLE_MEMBER\"]', '$2y$13$ULk1X6k525TCw61iEDw0NOP7D7VCYpyqqr66BCroKcJTDkWfiAolq', 'drago', 'drago', '1920-03-12', 'Female', 'londen', '42232', 'UK', 'drago'),
+(5, 'sam@gmail.com', '[\"ROLE_INSTRUCTOR\"]', '$2y$13$CkEp1uOnzSaFpEnNhBS0iOFt/b/pN4VHc7PafyhmWzesUL2WZeNbG', 'Sam', 'Sam', '1996-10-25', 'Male', 'Amsterdamstraat', '1004AN', 'Amsterdam', 'Sam'),
+(11, 'ahmed@gmail.com', '[\"ROLE_INSTRUCTOR\"]', '$2y$13$4y9RevozDOCM79KurkFHWO1YrbFnRcY33ZvjgU1zs..JPWBU6b2Ku', 'ahmed', 'ahmed', '1903-01-01', 'Male', 'roma', '1234', 'milan', 'ahmed'),
+(12, 'drago@gmail.com', '[\"ROLE_MEMBER\"]', '$2y$13$CkEp1uOnzSaFpEnNhBS0iOFt/b/pN4VHc7PafyhmWzesUL2WZeNbG', 'drago', 'drago', '1920-03-12', 'Female', 'londen', '42232', 'UK', 'drago'),
 (13, 'Rambo@gmail.com', '[\"ROLE_MEMBER\"]', '$2y$13$a1RwJAXac5vYEW5SENs/zuuuwu/P7qZVlnNm2By0JPToCXZBBTUuW', 'Rambo', 'Rony', '1994-11-18', 'Male', 'Amsterdamstraat', '1004AN', 'Delft', 'Rambo'),
-(14, 'Zakria@gmail.com', '[\"ROLE_INSTRUCTOR\"]', '$2y$13$gA/T/Tqli8BQY5ZTGsNDi.G0vFppZXk2nqWnumBIp4R7TzZkjZ9i.', 'Zakria', 'Ennaji', '2000-10-04', 'Male', 'Amsterdamstraat', '1004AN', 'Den Haag', 'Zakria');
+(14, 'shaner@gmail.com', '[\"ROLE_MEMBER\"]', '$2y$13$gA/T/Tqli8BQY5ZTGsNDi.G0vFppZXk2nqWnumBIp4R7TzZkjZ9i.', 'shaner', 'shaner', '2000-10-04', 'Male', 'Amsterdamstraat', '1004AN', 'Den Haag', 'Shaner'),
+(15, 'aliqaitlbe7@gmail.com', '[\"ROLE_MEMBER\"]', '$2y$13$HJRDDJiSEzRd7u9guYHYcuqRs86l3Pvp4UinQoJ//94u7zs93QMbu', 'Ali', 'Alkatlabe', '1994-01-18', 'Male', 'Harderwijkstraat', '2573ZB', 'Den Haag', 'ali'),
+(16, 'ali@gmail.com', '[\"ROLE_ADMIN\"]', '$2y$13$CkEp1uOnzSaFpEnNhBS0iOFt/b/pN4VHc7PafyhmWzesUL2WZeNbG', 'Ali', 'AAlkatlabe', '2013-06-10', 'man', 'neherkade', '2521RC', '', 'AliAlkatlabe');
 
 --
--- Indexes for dumped tables
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `doctrine_migration_versions`
+-- Indexen voor tabel `doctrine_migration_versions`
 --
 ALTER TABLE `doctrine_migration_versions`
   ADD PRIMARY KEY (`version`);
 
 --
--- Indexes for table `lessen`
+-- Indexen voor tabel `lessen`
 --
 ALTER TABLE `lessen`
   ADD PRIMARY KEY (`id`),
@@ -204,7 +206,7 @@ ALTER TABLE `lessen`
   ADD KEY `IDX_29B9C798C4FC193` (`instructor_id`);
 
 --
--- Indexes for table `messenger_messages`
+-- Indexen voor tabel `messenger_messages`
 --
 ALTER TABLE `messenger_messages`
   ADD PRIMARY KEY (`id`),
@@ -213,7 +215,7 @@ ALTER TABLE `messenger_messages`
   ADD KEY `IDX_75EA56E016BA31DB` (`delivered_at`);
 
 --
--- Indexes for table `registration`
+-- Indexen voor tabel `registration`
 --
 ALTER TABLE `registration`
   ADD PRIMARY KEY (`id`),
@@ -221,65 +223,65 @@ ALTER TABLE `registration`
   ADD KEY `IDX_62A8A7A7CDF80196` (`lesson_id`);
 
 --
--- Indexes for table `training`
+-- Indexen voor tabel `training`
 --
 ALTER TABLE `training`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indexen voor tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT for table `lessen`
+-- AUTO_INCREMENT voor een tabel `lessen`
 --
 ALTER TABLE `lessen`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `messenger_messages`
+-- AUTO_INCREMENT voor een tabel `messenger_messages`
 --
 ALTER TABLE `messenger_messages`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `registration`
+-- AUTO_INCREMENT voor een tabel `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `training`
+-- AUTO_INCREMENT voor een tabel `training`
 --
 ALTER TABLE `training`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- Constraints for dumped tables
+-- Beperkingen voor geëxporteerde tabellen
 --
 
 --
--- Constraints for table `lessen`
+-- Beperkingen voor tabel `lessen`
 --
 ALTER TABLE `lessen`
   ADD CONSTRAINT `FK_29B9C798C4FC193` FOREIGN KEY (`instructor_id`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `FK_29B9C79BEFD98D1` FOREIGN KEY (`training_id`) REFERENCES `training` (`id`);
 
 --
--- Constraints for table `registration`
+-- Beperkingen voor tabel `registration`
 --
 ALTER TABLE `registration`
   ADD CONSTRAINT `FK_62A8A7A77597D3FE` FOREIGN KEY (`member_id`) REFERENCES `user` (`id`),
